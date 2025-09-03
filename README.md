@@ -10,8 +10,8 @@ This repository serves as a sandbox for testing new technologies and methodologi
 To get started, you need [pnpm](https://pnpm.io/).
 
 ```bash
-git clone https://github.com/mathi123/new-tech.git new-tech
-cd new-tech
+git clone https://github.com/mathi123/shiny-octo-pancake.git shiny-octo-pancake && cd shiny-octo-pancake
+pnpm i
 pnpm run dev
 ```
 
@@ -32,6 +32,10 @@ The tsconfig file contains setting for compiling typescript. The following setti
 
 Commit message must use [conventional](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional) config.
 
+## Linting
+
+Eslint
+
 ## Package Log
 
 This logs explains why packages were installed.
@@ -39,4 +43,5 @@ This logs explains why packages were installed.
 | Reason | Package(s) |
 | - | - |
 | NextJs setup | next@latest, react@latest, react-dom@latest |
-| commit message linting | @commitlint/config-conventional @commitlint/cli husky |
+| commit message linting | @commitlint/config-conventional ,@commitlint/cli, husky |
+| eslint via next | eslint, eslint-config-next, eslint-config-prettier, @eslint/eslintrc |
