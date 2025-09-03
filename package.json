@@ -9,6 +9,8 @@
     "start": "next start",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
+    "format": "prettier --config .prettierrc --check .",
+    "format:fix": "prettier --config .prettierrc --write .",
     "prepare": "husky"
   },
   "keywords": [],
@@ -30,6 +32,7 @@
     "eslint-config-next": "15.5.2",
     "eslint-config-prettier": "^10.1.8",
     "husky": "^9.1.7",
+    "prettier": "^3.6.2",
     "typescript": "5.9.2"
   }
 }

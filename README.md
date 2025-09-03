@@ -2,7 +2,6 @@
 
 This repository serves as a sandbox for testing new technologies and methodologies in software development. Our goal is to explore and evaluate tools and practices that contribute to building modern, robust, and future-proof complex applications. By experimenting with cutting-edge technologies, we aim to identify best practices and innovative solutions that can be applied to real-world projects.
 
-
 # Getting Started
 
 ## Quickstart
@@ -34,7 +33,15 @@ Commit message must use [conventional](https://github.com/conventional-changelog
 
 ## Linting
 
-Eslint
+Eslint was setup to use 3 rule sets:
+
+- next js rules
+- typescript rules
+- prettier rules (such that they don't conflict)
+
+## Formatting
+
+Prettier is used to automatically format code.
 
 ## Node Version
 
@@ -44,8 +51,8 @@ The node version is indicated in .npmrc, and the pnpm version in package.json. T
 
 This logs explains why packages were installed.
 
-| Reason | Package(s) |
-| - | - |
-| NextJs setup | next@latest, react@latest, react-dom@latest |
-| commit message linting | @commitlint/config-conventional ,@commitlint/cli, husky |
-| eslint via next | eslint, eslint-config-next, eslint-config-prettier, @eslint/eslintrc |
+| Reason                 | Package(s)                                                           |
+| ---------------------- | -------------------------------------------------------------------- |
+| NextJs setup           | next@latest, react@latest, react-dom@latest                          |
+| commit message linting | @commitlint/config-conventional ,@commitlint/cli, husky              |
+| eslint via next        | eslint, eslint-config-next, eslint-config-prettier, @eslint/eslintrc |
