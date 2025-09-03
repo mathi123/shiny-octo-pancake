@@ -36,6 +36,10 @@ Commit message must use [conventional](https://github.com/conventional-changelog
 
 Eslint
 
+## Node Version
+
+The node version is indicated in .npmrc, and the pnpm version in package.json. These versions are also used on CI/CD. Be carefull to run commands with pnpm, not your local npm version.
+
 ## Package Log
 
 This logs explains why packages were installed.
