@@ -27,6 +27,15 @@ The tsconfig file contains setting for compiling typescript. The following setti
 - allowJs: set to false
 - strict: set to true
 
+In order for @/... imports to work, the following config was added:
+
+```json
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+```
+
 ## Commit message
 
 Commit message must use [conventional](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional) config.
