@@ -1,2 +1,3 @@
 pnpm run lint:fix
 pnpm run format:fix
+pnpm vitest --no-watch
