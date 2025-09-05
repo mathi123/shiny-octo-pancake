@@ -16,13 +16,13 @@ pnpm run dev
 
 # Technologies
 
-## NextJs
+## Next.js
 
-NextJs was installed using [manual install](https://nextjs.org/docs/app/getting-started/installation#manual-installation) procedure. This contains a section on [typescript setup](https://nextjs.org/docs/app/getting-started/installation#ide-plugin) in VSCode.
+Next.js was installed using [manual install](https://nextjs.org/docs/app/getting-started/installation#manual-installation) procedure. This contains a section on [TypeScript setup](https://nextjs.org/docs/app/getting-started/installation#ide-plugin) in VS Code.
 
-## Typescript
+## TypeScript
 
-The tsconfig file contains setting for compiling typescript. The following settings were modified:
+The tsconfig file contains settings for compiling TypeScript. The following settings were modified:
 
 - allowJs: set to false
 - strict: set to true
@@ -38,15 +38,15 @@ In order for @/... imports to work, the following config was added:
 
 ## Commit message
 
-Commit message must use [conventional](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional) config.
+Commit messages must use the [Conventional Commits](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional) config.
 
 ## Linting
 
-Eslint was setup to use 3 rule sets:
+ESLint was set up to use 3 rule sets:
 
-- next js rules
-- typescript rules
-- prettier rules (such that they don't conflict)
+- Next.js rules
+- TypeScript rules
+- Prettier rules (such that they don't conflict)
 
 ## Formatting
 
@@ -54,7 +54,7 @@ Prettier is used to automatically format code.
 
 ## Node Version
 
-The node version is indicated in .npmrc, and the pnpm version in package.json. These versions are also used on CI/CD. Be carefull to run commands with pnpm, not your local npm version.
+The Node.js version is indicated in .npmrc, and the pnpm version in package.json. These versions are also used on CI/CD. Be careful to run commands with pnpm, not your local npm version.
 
 ## Testing
 
@@ -70,11 +70,11 @@ pnpm run test
 
 ## Package Log
 
-This logs explains why packages were installed.
+This log explains why packages were installed.
 
 | Reason                 | Package(s)                                                           |
 | ---------------------- | -------------------------------------------------------------------- |
-| NextJs setup           | next@latest, react@latest, react-dom@latest                          |
-| commit message linting | @commitlint/config-conventional ,@commitlint/cli, husky              |
-| eslint via next        | eslint, eslint-config-next, eslint-config-prettier, @eslint/eslintrc |
+| Next.js setup          | next@latest, react@latest, react-dom@latest                          |
+| commit message linting | @commitlint/config-conventional, @commitlint/cli, husky              |
+| ESLint via Next.js     | eslint, eslint-config-next, eslint-config-prettier, @eslint/eslintrc |
 | validating models      | zod                                                                  |
