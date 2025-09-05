@@ -56,6 +56,18 @@ Prettier is used to automatically format code.
 
 The node version is indicated in .npmrc, and the pnpm version in package.json. These versions are also used on CI/CD. Be carefull to run commands with pnpm, not your local npm version.
 
+## Testing
+
+### Unit Tests
+
+Vitest is used for running unit tests.
+
+```bash
+
+pnpm run test
+
+```
+
 ## Package Log
 
 This logs explains why packages were installed.
@@ -65,3 +77,4 @@ This logs explains why packages were installed.
 | NextJs setup           | next@latest, react@latest, react-dom@latest                          |
 | commit message linting | @commitlint/config-conventional ,@commitlint/cli, husky              |
 | eslint via next        | eslint, eslint-config-next, eslint-config-prettier, @eslint/eslintrc |
+| validating models      | zod                                                                  |
