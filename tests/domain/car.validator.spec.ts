@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { carSchema } from '@/shared/car.validator';
+import { carSchema } from '@/domain/car.validator';
 
 describe('carSchema', () => {
   it('parses a valid car with id and name', () => {

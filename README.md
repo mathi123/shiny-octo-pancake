@@ -32,7 +32,7 @@ In order for @/... imports to work, the following config was added:
 ```json
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["app/*"]
     }
 ```
 

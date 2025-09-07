@@ -5,8 +5,8 @@ vi.mock('@/storage/car.repository', () => ({
   createCar: vi.fn(),
 }));
 
-import { create } from '@/lib/car.manager';
-import { Car } from '@/models/car.model';
+import { create } from '@/actions/car/create';
+import { Car } from '@/domain/car.model';
 import { createCar } from '@/storage/car.repository';
 
 describe('Car Manager', () => {

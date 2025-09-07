@@ -1,5 +1,5 @@
-import { Car } from '@/models/car.model';
-import { carSchema } from '@/shared/car.validator';
+import { Car } from '@/domain/car.model';
+import { carSchema } from '@/domain/car.validator';
 import { createCar } from '@/storage/car.repository';
 
 export const create = async (car: Car): Promise<Car> => {
