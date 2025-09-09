@@ -6,10 +6,11 @@ This repository serves as a sandbox for testing new technologies and methodologi
 
 ## Quickstart
 
-To get started, you need [pnpm](https://pnpm.io/).
+To get started, you need [pnpm](https://pnpm.io/) and [docker](https://www.docker.com/).
 
 ```bash
-git clone https://github.com/mathi123/shiny-octo-pancake.git shiny-octo-pancake && cd shiny-octo-pancake
+git clone https://github.com/mathi123/shiny-octo-pancake.git shiny-octo-pancake
+cd shiny-octo-pancake
 pnpm i
 pnpm run dev
 ```
@@ -68,6 +69,30 @@ pnpm run test
 
 ```
 
+## Database
+
+### ORM
+
+Prisma is used as an ORM. Modifty the schema.prisma file, and add a migration as follows:
+
+```bash
+pnpm prisma migrate dev --schema=app/storage/schema.prisma --name MIGRATION_NAME
+```
+
+Notes:
+
+- Neon Adapter is used on production and Pg Adapter for local development
+- queryCompiler, driverAdapters were configured
+- "Rust free" generator could be good to reduce bundle size on NextJs, but [does not work yet with prisma-client](https://github.com/prisma/prisma/issues/27079).
+- To check: [connection pooling](https://vercel.com/guides/connection-pooling-with-functions) still relevant with Neon driver?
+
+## Env Vars
+
+| Variable              | Description                                      |
+| --------------------- | ------------------------------------------------ |
+| DATABASE_URL          | The database url.                                |
+| DATABASE_URL_UNPOOLED | Direct database url, without connection pooling. |
+
 ## Package Log
 
 This log explains why packages were installed.
@@ -78,3 +103,24 @@ This log explains why packages were installed.
 | commit message linting | @commitlint/config-conventional, @commitlint/cli, husky              |
 | ESLint via Next.js     | eslint, eslint-config-next, eslint-config-prettier, @eslint/eslintrc |
 | validating models      | zod                                                                  |
+| prisma ORM setup       | prisma, @prisma/client, @prisma/adapter-neon                         |
+
+## Known Issues
+
+### Turbopack
+
+TurboPack and @prisma/pg-adapter don't work well together, for pnpm. The following error is thrown when instantiating the adapter.
+
+```bash
+Package pg can't be external
+The request pg matches serverExternalPackages (or the default list).
+The request could not be resolved by Node.js from the project directory.
+Packages that should be external need to be installed in the project directory, so they can be resolved from the output files.
+Try to install it into the project directory by running npm install pg from the project directory.
+```
+
+A temporary fix was to modify the .npmrc file as mentioned [here](https://github.com/vercel/next.js/discussions/76247).
+
+```.npmrc
+public-hoist-pattern[]=*pg*
+```

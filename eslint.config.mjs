@@ -7,7 +7,7 @@ const compat = new FlatCompat({
 const eslintConfig = [
   ...compat.config({
     extends: ['next/core-web-vitals', 'next/typescript', 'prettier'],
-    ignorePatterns: ['.next/', 'node_modules/', 'next-env.d.ts'],
+    ignorePatterns: ['.next/', 'node_modules/', 'next-env.d.ts', 'app/storage/client'],
     rules: {
       // Enforce a maximum line length
       'max-len': ['warn', { code: 144 }],

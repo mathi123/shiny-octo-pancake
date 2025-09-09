@@ -4,3 +4,6 @@
 # next
 /.next/
 next-env.d.ts
+
+# prisma
+/app/storage/client
