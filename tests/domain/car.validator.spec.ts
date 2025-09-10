@@ -1,12 +1,12 @@
 import { describe, expect, it } from 'vitest';
-import { carSchema } from '@/domain/car.validator';
+import { carSchema } from '@/domain/car.model';
 
 describe('carSchema', () => {
   it('parses a valid car with id and name', () => {
     const result = carSchema.safeParse({ id: '123e4567-e89b-12d3-a456-426614174000', name: 'Tesla' });
     expect(result.success).toBe(true);
     if (result.success) {
-      expect(result.data).toEqual({ id: '123e4567-e89b-12d3-a456-426614174000', name: 'Tesla' });
+      expect(result.data).toEqual({ id: '123e4567-e89b-12d3-a456-426614174000', name: 'Tesla', createdAt: null, updatedAt: null });
     }
   });
 

@@ -1,9 +1,8 @@
-import { Car } from '@/domain/car.model';
-import { carSchema } from '@/domain/car.validator';
-import { createCar } from '@/storage/car.repository';
+import { Car, carSchema } from '@/domain/car.model';
+import { dbCarCreate } from '@/storage/car/car.create';
 
-export const create = async (car: Car): Promise<Car> => {
+export const createCar = async (car: Car): Promise<Car> => {
   const validatedCar = carSchema.parse(car);
-  const result = await createCar(validatedCar);
+  const result = await dbCarCreate(validatedCar);
   return result;
 };

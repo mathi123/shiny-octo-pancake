@@ -1,7 +1,8 @@
-import { Car } from '@/domain/car.model';
-import { carSchema } from '@/domain/car.validator';
+import { Car, carSchema } from '@/domain/car.model';
+import { dbCarUpdate } from '@/storage/car/car.update';
 
-export const update = async (car: Car): Promise<void> => {
+export const updateCar = async (car: Car): Promise<Car> => {
   const validatedCar = carSchema.parse(car);
-  console.log('Updating car in database', validatedCar);
+  const result = await dbCarUpdate(validatedCar);
+  return result;
 };

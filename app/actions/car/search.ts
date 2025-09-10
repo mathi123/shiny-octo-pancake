@@ -1,10 +1,8 @@
 import { Car } from '@/domain/car.model';
-import { CarSearchParams } from '@/domain/car.searchParams';
-import { getPrismaClient } from '@/storage/utils';
+import { CarFilter } from '@/domain/car.filter';
+import { Page } from '@/domain/page.model';
+import { dbCarSearch as searchStorage } from '@/storage/car/car.search';
 
-export const search = async (searchParams: CarSearchParams): Promise<Car[]> => {
-  console.log('Searching for cars', searchParams);
-  const prisma = getPrismaClient();
-  const cars = await prisma.car.findMany();
-  return cars;
+export const searchCar = async (filter: CarFilter): Promise<Page<Car>> => {
+  return searchStorage(filter);
 };
