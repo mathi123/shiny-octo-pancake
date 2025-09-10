@@ -25,9 +25,9 @@
   "license": "MIT",
   "packageManager": "pnpm@10.15.1",
   "dependencies": {
-    "@prisma/adapter-neon": "^6.15.0",
-    "@prisma/adapter-pg": "^6.15.0",
-    "@prisma/client": "^6.15.0",
+    "@prisma/adapter-neon": "^6.16.0",
+    "@prisma/adapter-pg": "^6.16.0",
+    "@prisma/client": "^6.16.0",
     "next": "^15.5.2",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
@@ -48,7 +48,7 @@
     "husky": "^9.1.7",
     "jsdom": "^26.1.0",
     "prettier": "^3.6.2",
-    "prisma": "^6.15.0",
+    "prisma": "^6.16.0",
     "typescript": "5.9.2",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.2.4"

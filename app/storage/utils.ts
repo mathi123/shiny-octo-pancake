@@ -1,6 +1,6 @@
 import { PrismaNeon } from '@prisma/adapter-neon';
 import { PrismaPg } from '@prisma/adapter-pg';
-import { PrismaClient } from './client';
+import { PrismaClient } from './client/client';
 
 export const getPrismaClient = () => {
   if (!process.env.DATABASE_URL) {
