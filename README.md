@@ -73,17 +73,15 @@ pnpm run test
 
 ### ORM
 
-Prisma is used as an ORM. Modifty the schema.prisma file, and add a migration as follows:
+Prisma is used as an ORM. Modify the schema.prisma file, and add a migration as follows:
 
 ```bash
-pnpm prisma migrate dev --schema=app/storage/schema.prisma --name MIGRATION_NAME
+pnpm run db:migrate
 ```
 
 Notes:
 
 - Neon Adapter is used on production and Pg Adapter for local development
-- queryCompiler, driverAdapters were configured
-- "Rust free" generator could be good to reduce bundle size on NextJs, but [does not work yet with prisma-client](https://github.com/prisma/prisma/issues/27079).
 - To check: [connection pooling](https://vercel.com/guides/connection-pooling-with-functions) still relevant with Neon driver?
 
 ## Env Vars
