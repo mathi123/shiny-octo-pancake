@@ -9,6 +9,10 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+
+    permissions:
+      pull-requests: write
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -35,4 +39,8 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Check testing
-        run: pnpm run test
+        run: pnpm run test:coverage
+
+      - name: 'Report Coverage'
+        if: always()
+        uses: davelosert/vitest-coverage-report-action@v2
