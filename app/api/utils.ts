@@ -1,5 +1,5 @@
-import { ZodError, ZodSafeParseResult } from 'zod';
-import { statusCodes } from './statusCodes';
+import z, { ZodError, ZodSafeParseResult } from 'zod';
+import { statusCodes } from './status-codes';
 import { NextRequest } from 'next/server';
 
 export const tryCreateResource = async <T>(createResource: (resource: T) => Promise<T>, resource: T): Promise<Response> => {
@@ -33,14 +33,19 @@ export const noContentResponse = (): Response => {
   return new Response(null, { status: statusCodes.NO_CONTENT });
 };
 
+const uuidSchema = z.uuid();
+
+export const getIdFromRoute = async (route: IdRouteParams): Promise<string> => {
+  const { id } = await route.params;
+  return uuidSchema.parse(id);
+};
+
 export const tryUpdateResource = async <T>(
   request: NextRequest,
   route: IdRouteParams,
-  updateResource: (resource: T) => Promise<void>,
+  updateResource: (resource: T) => Promise<T>,
 ): Promise<Response> => {
-  const { id } = await route.params;
-
-  // TODO: verify id is a valid uuid
+  const id = await getIdFromRoute(route);
 
   const data = await request.json();
   if (data.id !== id) {
