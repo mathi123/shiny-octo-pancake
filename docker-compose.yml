@@ -1,5 +1,5 @@
 version: '3.9'
-name: shiny-octo-pancake
+name: neurotic-web
 
 services:
   postgres:

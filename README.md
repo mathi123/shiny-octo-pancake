@@ -1,16 +1,18 @@
-# Philosophy
+# Why
 
-This repository serves as a sandbox for testing new technologies and methodologies in software development. Our goal is to explore and evaluate tools and practices that contribute to building modern, robust, and future-proof complex applications. By experimenting with cutting-edge technologies, we aim to identify best practices and innovative solutions that can be applied to real-world projects.
+This repository is a collection of modern web development tools aimed at creating fast, robust, and future-proof applications. These applications are designed to handle complex business domains, utilizing a domain-driven approach and setup to ensure scalability and maintainability. This repository is about:
 
-# Getting Started
+- Using minimal and well-known libraries
+- Writing clean code is a domain driven approach
+- Well tested with unit tests and e2e tests
 
-## Quickstart
+# Quickstart
 
 To get started, you need [pnpm](https://pnpm.io/) and [docker](https://www.docker.com/).
 
 ```bash
-git clone https://github.com/mathi123/shiny-octo-pancake.git shiny-octo-pancake
-cd shiny-octo-pancake
+git clone https://github.com/mathi123/neurotic-web.git
+cd neurotic-web
 pnpm i
 pnpm run dev
 ```
@@ -66,6 +68,8 @@ Vitest is used for running unit tests.
 ```bash
 
 pnpm run test
+# Or with code coverage
+pnpm run test:coverage
 
 ```
 
@@ -95,13 +99,15 @@ Notes:
 
 This log explains why packages were installed.
 
-| Reason                 | Package(s)                                                           |
-| ---------------------- | -------------------------------------------------------------------- |
-| Next.js setup          | next@latest, react@latest, react-dom@latest                          |
-| commit message linting | @commitlint/config-conventional, @commitlint/cli, husky              |
-| ESLint via Next.js     | eslint, eslint-config-next, eslint-config-prettier, @eslint/eslintrc |
-| validating models      | zod                                                                  |
-| prisma ORM setup       | prisma, @prisma/client, @prisma/adapter-neon                         |
+| Reason                 | Package(s)                                                                                             |
+| ---------------------- | ------------------------------------------------------------------------------------------------------ |
+| Next.js setup          | next@latest, react@latest, react-dom@latest                                                            |
+| commit message linting | @commitlint/config-conventional, @commitlint/cli, husky                                                |
+| ESLint via Next.js     | eslint, eslint-config-next, eslint-config-prettier, @eslint/eslintrc                                   |
+| validating models      | zod                                                                                                    |
+| prisma ORM setup       | prisma, @prisma/client, @prisma/adapter-neon, @prisma/adapter-pg                                       |
+| Unit testing setup     | vitest, vite-tsconfig-paths, jsdom, @vitejs/plugin-react, @testing-library/dom, @testing-library/react |
+| Unit test coverage     | @vitest/coverage-v8                                                                                    |
 
 ## Known Issues
 
