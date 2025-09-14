@@ -1,0 +1,10 @@
+---
+description: Domain models in unit tests
+globs:
+alwaysApply: true
+---
+
+When writing tests for actions (domain models), the code will probably require instances of domain models to test with. To make these tests maintainable, there are builder functions under /tests/builders.
+
+- Use the builder functions for building instances of domain models
+- Provide the properties you want to override to the builder function

@@ -1,0 +1,7 @@
+---
+description: Unit tests
+globs:
+alwaysApply: true
+---
+
+Be sure to keep unit tests simple, and only test the function in scope, not the underlying logic.
